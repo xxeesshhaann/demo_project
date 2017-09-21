@@ -1,0 +1,9 @@
+<h1> WELCOME TO PSCA</h1>
+<% if !current_account %>
+<%=link_to "Sign Up", new_account_registration_path%> |
+<%end%>
+<% if current_account %>
+<%= link_to 'Logout', destroy_account_session_path, method: :delete %>
+<% else %>
+<%=link_to "Sign In", new_account_session_path%>
+<% end %>
